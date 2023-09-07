@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_Core.iml" filepath="$PROJECT_DIR$/01_Core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../02_SpringBeanLifeCycle/02_SpringBeanLifeCycle.iml" filepath="$PROJECT_DIR$/../02_SpringBeanLifeCycle/02_SpringBeanLifeCycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../03_DI_With_Spring/03_DI_With_Spring.iml" filepath="$PROJECT_DIR$/../03_DI_With_Spring/03_DI_With_Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../04_FullModevsLightMode/04_FullModevsLightMode.iml" filepath="$PROJECT_DIR$/../04_FullModevsLightMode/04_FullModevsLightMode.iml" />
+    </modules>
+  </component>
+</project>
