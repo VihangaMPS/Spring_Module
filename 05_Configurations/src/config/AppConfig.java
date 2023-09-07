@@ -8,5 +8,6 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @ComponentScan(basePackages = "bean")
 @Import({AppConfig1.class,AppConfig2.class}) // we can import configurations into a single class
+
 public class AppConfig {
 }
