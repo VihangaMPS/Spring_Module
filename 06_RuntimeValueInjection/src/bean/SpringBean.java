@@ -10,8 +10,9 @@ public class SpringBean {
         System.out.println("Spring bean Default Constructor");
     }
 */
-    public SpringBean(@Value("C001") String id){
+    public SpringBean(@Value("C001") String id,@Value("10") int age){
         System.out.println("Spring Bean Instantiated");
         System.out.println(id);
+        System.out.println(age);
     }
 }
