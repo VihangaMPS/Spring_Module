@@ -6,4 +6,5 @@ This is to learn the Spring framework
 - DI with Soring
 - Full Mode vs. Light Mode
 - Configuration
+- Runtime Value Injection
   
