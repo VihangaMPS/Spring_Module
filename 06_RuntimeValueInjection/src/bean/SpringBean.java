@@ -13,7 +13,7 @@ public class SpringBean {
             System.out.println("Spring bean Default Constructor");
         }
     */
-    @Autowired
+    @Autowired(required = false)
     public SpringBean(@Value("C001") String id,
                       @Value("10") int age,
                       @Value("true") boolean b){
@@ -23,7 +23,7 @@ public class SpringBean {
         System.out.println(b);
     }
 
-
+    @Autowired(required = false)
     public SpringBean(@Value("1,2,3") int [] myNames,@Value("A")char a){
         System.out.println("Spring Bean Instantiated");
 
