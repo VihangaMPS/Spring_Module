@@ -24,6 +24,7 @@ public class SpringBeanTwo implements InitializingBean {
         System.out.println(salary);
     }
 
+    //--------------------------->>>>>
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("=================================================");
