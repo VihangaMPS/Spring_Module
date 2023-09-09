@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SpringBeanOne implements InitializingBean {
-    @Value("${os.name}")
-    private String osName;
+    @Value("${user.name}")
+    private String userName;
 
     public SpringBeanOne() {
         System.out.println("Spring Bean One Instantiated");
@@ -15,6 +15,6 @@ public class SpringBeanOne implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println(osName);
+        System.out.println(userName);
     }
 }
