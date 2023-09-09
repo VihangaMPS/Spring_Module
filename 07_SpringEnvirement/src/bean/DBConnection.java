@@ -1,11 +1,17 @@
 package bean;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DBConnection implements InitializingBean {
+
+    @Autowired
+    Environment environment;
+
     @Value("${user.db.url}")
     private String url;
     @Value("${user.db.name}")
@@ -21,6 +27,11 @@ public class DBConnection implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println(environment);
+        String version = environment.getProperty("os.version");
+        System.out.println(version);
+
+
         System.out.println("=========================================");
         System.out.println(url);
         System.out.println(userName);
