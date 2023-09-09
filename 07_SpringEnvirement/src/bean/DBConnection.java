@@ -27,6 +27,8 @@ public class DBConnection implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        // getProperty vs  getRequiredProperty
+
         System.out.println(environment);
         String version = environment.getProperty("os.version");// issue key null
 
