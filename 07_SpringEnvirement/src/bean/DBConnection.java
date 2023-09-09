@@ -28,8 +28,13 @@ public class DBConnection implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println(environment);
-        String version = environment.getProperty("os.version");
+        String version = environment.getProperty("os.version");// issue key null
+
+        String requiredProperty = environment.getRequiredProperty("user.name"); //if key is wrong = Exceptions
+
+
         System.out.println(version);
+        System.out.println(requiredProperty);
 
 
         System.out.println("=========================================");
