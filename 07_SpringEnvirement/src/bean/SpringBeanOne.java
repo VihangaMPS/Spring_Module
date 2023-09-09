@@ -6,8 +6,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SpringBeanOne implements InitializingBean {
+
+    //${} -> Property PlaceHolder
     @Value("${user.name}")
     private String userName;
+
+    @Value("${os.version}")
+    private String osVersion ;
 
     public SpringBeanOne() {
         System.out.println("Spring Bean One Instantiated");
@@ -16,5 +21,6 @@ public class SpringBeanOne implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println(userName);
+        System.out.println(osVersion);
     }
 }

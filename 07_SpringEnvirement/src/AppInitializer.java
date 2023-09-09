@@ -24,7 +24,7 @@ public class AppInitializer {
 
         //Access Predefined properties from java
         // System.getProperties()
-  /*      Properties properties = System.getProperties();
+   /*     Properties properties = System.getProperties();
         for (Object key : properties.keySet()) {
             System.out.println(key+" : "+ properties.get(key));
         }*/
