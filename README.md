@@ -7,4 +7,5 @@ This is to learn the Spring framework
 - Full Mode vs. Light Mode
 - Configuration
 - Runtime Value Injection
+- Spring Enviroment
   
