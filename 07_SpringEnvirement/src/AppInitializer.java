@@ -14,20 +14,22 @@ public class AppInitializer {
    //  Access System Environment Variable With Java
    //   System.getenv();
 
-        Map<String, String> getenv = System.getenv();
+       /* Map<String, String> getenv = System.getenv();
         for (String key : getenv.keySet()) {
             System.out.println(key+ " : "+getenv.get(key));
 
         }
-
-        System.out.println("___________________________________________________");
+*/
+        System.out.println("_________????________________?????__________________________");
 
         //Access Predefined properties from java
         // System.getProperties()
-        Properties properties = System.getProperties();
+  /*      Properties properties = System.getProperties();
         for (Object key : properties.keySet()) {
             System.out.println(key+" : "+ properties.get(key));
-        }
+        }*/
 
+/*        String property = System.getProperty("os.name");
+        System.out.println(property);*/
     }
 }
