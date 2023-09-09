@@ -14,6 +14,13 @@ public class SpringBeanOne implements InitializingBean {
     @Value("${os.version}")
     private String osVersion ;
 
+
+    @Value("${ijse.application.name}")
+    private String projectName;
+
+    @Value("${ijse.application.db}")
+    private String dbName;
+
     public SpringBeanOne() {
         System.out.println("Spring Bean One Instantiated");
     }
@@ -22,5 +29,7 @@ public class SpringBeanOne implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         System.out.println(userName);
         System.out.println(osVersion);
+        System.out.println(projectName);
+        System.out.println(dbName);
     }
 }
