@@ -69,6 +69,9 @@
       <root url="jar://$PROJECT_DIR$/libs/spring-context-5.3.9-javadoc.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-webmvc-5.3.9-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-webmvc-5.3.9-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
