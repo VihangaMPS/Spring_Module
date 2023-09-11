@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springmvc">
+    <output-path>$PROJECT_DIR$/out/artifacts/springmvc</output-path>
+    <root id="archive" name="springmvc.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="08_Spring_MVC" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="libs" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="08_Spring_MVC/web/Web" />
+    </root>
+  </artifact>
+</component>
