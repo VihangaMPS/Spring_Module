@@ -1,16 +1,16 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="08_Spring_MVC:Web exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/08_Spring_MVC_Web_exploded</output-path>
+  <artifact type="exploded-war" name="restcontroller">
+    <output-path>$PROJECT_DIR$/out/artifacts/restcontroller</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="javaee-facet-classes" facet="08_Spring_MVC/web/Web" />
-          <element id="module-output" name="08_Spring_MVC" />
+          <element id="module-output" name="09_RestControllers" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="libs" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="09_RestControllers/web/Web" />
     </root>
   </artifact>
 </component>
