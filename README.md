@@ -9,4 +9,6 @@ This is to learn the Spring framework
 - Runtime Value Injection
 - Spring Environment
 - Spring Web MVC
+- Controller
+- Rest Controller
   
