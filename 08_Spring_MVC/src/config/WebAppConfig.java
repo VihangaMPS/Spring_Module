@@ -17,7 +17,7 @@ public class WebAppConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver v = new InternalResourceViewResolver();
-        v.setPrefix("/views/");
+        v.setPrefix("/WEB-INF/views/");
         v.setSuffix(".html");
         v.setOrder(2);
         return v;
@@ -26,6 +26,6 @@ public class WebAppConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
-        registry.addResourceHandler("/views/**").addResourceLocations("/views/");
+        registry.addResourceHandler("/WEB-INF/views/**").addResourceLocations("/WEB-INF/views/");
     }
 }
