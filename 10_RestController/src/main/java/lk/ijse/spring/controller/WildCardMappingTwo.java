@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("one")
-public class WildCardMapping {
+public class WildCardMappingTwo {
 
 
-    // wild card mapping
-    //Matches one or more Character in a path segment
+    // wild card mapping option Two
+    //Matches one or more Character in a path segment util the end of the path
     //test/*/hello -->  test//hello(not matching)
     //test/*/hello -->  test/1/hello( matching)
     //test/*/hello -->  test/abcd/hello( matching)
@@ -22,11 +22,11 @@ public class WildCardMapping {
         return "Get Mapping Invoked (test) ";
     }
 
-    @GetMapping(path = "hello/*/*")
-    public String test2(){
-        return "Get Mapping Invoked (test2) ";
-    }
-
+//    @GetMapping(path = "hello/*/*")
+//    public String test2(){
+//        return "Get Mapping Invoked (test2) ";
+//    }
+//
 
 
 }
