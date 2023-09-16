@@ -27,7 +27,7 @@ public class CustomerController {
     }
 
     @GetMapping (path = "search")//handler methods
-    public String searchCustomer(){
+    public String searchCustomer(){//handler methods
         return "Customer Search and get mapping methods";
     }
 
