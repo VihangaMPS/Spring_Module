@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class CharacterMapping {
 
 
-    @GetMapping("")
+//    @GetMapping("item/I??")
     public String test(){
         return "Get Mapping Invoked (test)";
     }
 
-    @GetMapping("")
+    @GetMapping("???/search")
     public String test2(){
         return "Get Mapping Invoked (test2)";
     }
