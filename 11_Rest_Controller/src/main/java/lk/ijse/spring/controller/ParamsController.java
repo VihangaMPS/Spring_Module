@@ -14,9 +14,9 @@ public class ParamsController {
         return "Hello 1" + id+" "+name;
     }
 
-    @GetMapping
-    public String test2(){
-        return "Hello @2";
+    @GetMapping(path = "one",params = {"id"})
+    public String test2(String id){
+        return "Hello @2"+ id;
     }
 
     @GetMapping(params = {"name","salary"})
