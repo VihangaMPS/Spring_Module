@@ -17,6 +17,7 @@
   - Path Variable Mapping
   - Wild Card Mapping One
   - Wild card Mapping Two 
+  - Params Controller
  
 
   
