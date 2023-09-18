@@ -1,5 +1,6 @@
 # Spring_Module
-This is to learn the Spring framework 
+
+        This is to learn the Spring framework 
 
 - Core
 - Spring Bean Life Cycle
@@ -11,4 +12,11 @@ This is to learn the Spring framework
 - Spring Web MVC
 - Controller
 - Rest Controller
+
+  - Character Mapping
+  - Path Variable Mapping
+  - Wild Card Mapping One
+  - Wild card Mapping Two 
+ 
+
   
