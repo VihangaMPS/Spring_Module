@@ -17,11 +17,12 @@ public class PathVariableController {
     // to do that we have to creat path variables -> {I001}
 
 
-    @GetMapping(path = "{I001}")
-    public String test(@PathVariable("I001") String  itemCode){
-        return itemCode;
+    @GetMapping(path = "{id}")
+    public String test(@PathVariable String  id){
+        return id;
     }
-    @GetMapping(path = "{Id}/{name}")
+
+    @GetMapping(path = "{customerID}/{name}")
     public String test2(@PathVariable String  id,@PathVariable String  name){
         return id +" "+name;
     }
