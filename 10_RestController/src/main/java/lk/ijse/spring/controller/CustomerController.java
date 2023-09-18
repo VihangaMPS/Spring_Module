@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("customer")
 public class CustomerController {
 
+    public CustomerController(){
+        System.out.println("Done");
+    }
+
     @GetMapping//handler methods
     public String getAllCustomer(){
         return "Hello There..?";
