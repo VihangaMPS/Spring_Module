@@ -12,7 +12,7 @@ public class JSONController {
         return "Hello JSON"+ dto.toString();
     }
 
-    @GetMapping(produces = {"application/json"})
+    @GetMapping(produces = {"application/json"}) //content-type = application/json
     public CustomerDTO sendBackJSON( ){
         return new  CustomerDTO("C001","Amal","Galle",1000.00);
     }
