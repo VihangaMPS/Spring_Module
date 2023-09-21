@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/10_RestController/pom.xml" />
         <option value="$PROJECT_DIR$/11_Rest_Controller/pom.xml" />
+        <option value="$PROJECT_DIR$/12_SpringWithMave/pom.xml" />
       </list>
     </option>
   </component>
