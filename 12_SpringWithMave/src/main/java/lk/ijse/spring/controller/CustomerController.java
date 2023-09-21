@@ -15,8 +15,15 @@ public class CustomerController {
 //        return "Hello Maven";
 //    }
 
+    @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public CustomerDTO searchCustomer(){
+        return new CustomerDTO("C002","CMJD","Galle",45454.00);
+    }
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public CustomerDTO getAllCustomer(){
         return new CustomerDTO("C001","IJSE","Panadura",45454.00);
     }
+
+
 }
