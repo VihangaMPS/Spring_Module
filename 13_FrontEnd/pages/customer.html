@@ -135,6 +135,29 @@
         //Work done;
     });
 
+
+    $("#txtCustomerID").on("keypress", function (e){
+        if (e.key=="Enter"){
+            var customerID = $(#txtCustomerID).val();
+
+            $.ajax({
+                url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer"+txtCustomerID,
+                method:"GET",
+                success: function (res) {
+                    console.log(res);
+                    /*     alert(res.message);
+                         loadAllCustomers();
+                     },
+                     error:function(error){
+                         var jsObject=JSON.parse(error.responseText);
+                         alert(jsObject.message);*/
+                }
+            });
+        }
+    });
+
+
+
     //Add customer to the database
     $("#btnSave").click(function () {
 
