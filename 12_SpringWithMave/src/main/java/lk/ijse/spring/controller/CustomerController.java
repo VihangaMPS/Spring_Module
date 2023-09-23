@@ -1,10 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -22,4 +19,13 @@ public class CustomerController {
         arrayList.add(new CustomerDTO("C004","sunil","colombo",52226));
         return arrayList;
     }
+
+    @PostMapping(consumes = {"application/json"})
+    public CustomerDTO saveCustomer(@ModelAttribute CustomerDTO dto){
+        System.out.println(dto.toString());
+        return dto;
+
+    }
+
+
 }

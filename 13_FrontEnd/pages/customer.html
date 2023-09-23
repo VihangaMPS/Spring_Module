@@ -54,7 +54,7 @@
                 <span class="control-error" id="lblcussalary"></span>
             </div>
             <div class="btn-group">
-                <button class="btn btn-primary" id="btnCustomer">Save Customer</button>
+                <button class="btn btn-primary" id="btnSave">Save Customer</button>
                 <button class="btn btn-danger" id="btnCusDelete">Remove</button>
                 <button class="btn btn-warning" id="btnUpdate">Update</button>
                 <button class="btn btn-success" id="btnGetAll">Get All</button>
@@ -86,7 +86,7 @@
 
 <script>
     //select the button and add an event to it
-   /* document.getElementById("btnCustomer").addEventListener("click", function () {
+    document.getElementById("btnCustomer").addEventListener("click", function () {
 
         //get typed values of input fields
         let id = document.getElementById("txtCustomerID").value;
@@ -133,27 +133,28 @@
         tBody.appendChild(tr);
 
         //Work done;
-    });*/
+    });
 
     //Add customer to the database
-    $("#btnCustomer").click(function () {
+    $("#btnSave").click(function () {
 
         var formData = $("#customerForm").serialize();
         // will generate a query String including form data
 
         //send ajax request to the customer servlet
         $.ajax({
-            url: baseURL+"customers",
+            url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer",
             method: "post",
             data: formData,
-            dataType:"json",
+            // dataType:"json",
             success: function (res) {
-                alert(res.message);
+                console.log(res);
+           /*     alert(res.message);
                 loadAllCustomers();
             },
             error:function(error){
                 var jsObject=JSON.parse(error.responseText);
-                alert(jsObject.message);
+                alert(jsObject.message);*/
             }
         });
     });
