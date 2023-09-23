@@ -20,11 +20,17 @@ public class CustomerController {
         return arrayList;
     }
 
-    @PostMapping(consumes = {"application/json"})
+    @PostMapping(consumes = {"application/json/x-www-form-urlencoded"})
     public CustomerDTO saveCustomer(@ModelAttribute CustomerDTO dto){
         System.out.println(dto.toString());
         return dto;
 
+    }
+
+
+    @GetMapping(path = "/{id}/")
+    public CustomerDTO searchCustomer(String id){
+       return new  CustomerDTO(id,"dasun","Galle",4841);
     }
 
 
