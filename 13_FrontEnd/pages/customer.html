@@ -86,7 +86,7 @@
 
 <script>
     //select the button and add an event to it
-    document.getElementById("btnCustomer").addEventListener("click", function () {
+   /* document.getElementById("btnCustomer").addEventListener("click", function () {
 
         //get typed values of input fields
         let id = document.getElementById("txtCustomerID").value;
@@ -133,21 +133,118 @@
         tBody.appendChild(tr);
 
         //Work done;
+    });*/
+
+    //Add customer to the database
+    $("#btnCustomer").click(function () {
+
+        var formData = $("#customerForm").serialize();
+        // will generate a query String including form data
+
+        //send ajax request to the customer servlet
+        $.ajax({
+            url: baseURL+"customers",
+            method: "post",
+            data: formData,
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllCustomers();
+            },
+            error:function(error){
+                var jsObject=JSON.parse(error.responseText);
+                alert(jsObject.message);
+            }
+        });
     });
 
+    //Get all customers from the database
+    $("#btnGetAll").click(function () {
+        //send ajax request to the customer servlet
+        loadAllCustomers();
+    });
+
+    //Delete customer by id
+    $("#btnCusDelete").click(function () {
+        let id = $("#txtCustomerID").val();
+        $.ajax({
+            url: baseURL+"customers?id=" + id + "",
+            method: "delete",
+            dataType:"json",
+            success: function (resp) {
+                alert(resp.message);
+                loadAllCustomers();
+            },
+            error:function (error){
+                alert(JSON.parse(error.responseText).message);
+            }
+        });
+    });
+
+    //Update customer details
+    $("#btnUpdate").click(function () {
+
+        let customerID = $("#txtCustomerID").val();
+        let customerName = $("#txtCustomerName").val();
+        let customerAddress = $("#txtCustomerAddress").val();
+        let customerSalary = $("#txtCustomerSalary").val();
+
+        var customer = {
+            id: customerID,
+            name: customerName,
+            address: customerAddress,
+            salary: customerSalary
+        }
+
+        $.ajax({
+            url: baseURL+'customers',
+            method: 'put',
+            contentType:"application/json",
+            data:JSON.stringify(customer),
+            dataType:"json",
+            success: function (res) {
+                alert(res.message);
+                loadAllCustomers();
+            },
+            error:function (error){
+                let cause= JSON.parse(error.responseText).message;
+                alert(cause);
+            }
+
+        });
+    });
+/*
+    //Load all customers
+    function loadAllCustomers() {
+        $("#tblCustomer").empty();
+        $.ajax({
+            url: baseURL+"customers",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.salary + '</td></tr>';
+                    $("#tblCustomer").append(row);
+                }
+                bindRowClickEvents();
+                setTextFieldValues("","","","");
+                $("#txtCustomerID").focus();
+            }
+        });
+
+    }*/
 
 
 
-    function getAllCustomers() {
+    function loadAllCustomers() {
         //clear all tbody data before add
         $("#tblCustomer").empty();
 
         $.ajax({
-            url: "http://localhost:8080/12_SpringWithMave_war/customer",
+            url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer",
             method:"GET",
             //dataType: "json", please convert the response into JSON
             success: function (response) {
-                let customers = response.data;
                 for (const customers of response) {
                     /*let cus = customers[i];
                     let id = cus.id;
@@ -157,12 +254,38 @@
                     let row = `<tr><td>${customers.id}</td><td>${customers.name}</td><td>${customers.address}</td><td>${customers.salary}</td></tr>`;
                     $("#tblCustomer").append(row);
                 }
-                bindTrEvents();
+                bindRowClickEvents();
             },
             error: function (error) {
                 alert(error.responseJSON.message);
             }
         });
+    }
+
+    //Event binding for table rows
+    function bindRowClickEvents() {
+        $("#tblCustomer>tr").click(function () {
+            let id = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let address = $(this).children(":eq(2)").text();
+            let salary = $(this).children(":eq(3)").text();
+            // console.log(id, name, address, salary);
+
+            //setting table details values to text fields
+            $('#txtCustomerID').val(id);
+            $('#txtCustomerName').val(name);
+            $('#txtCustomerAddress').val(address);
+            $('#txtCustomerSalary').val(salary);
+
+        });
+    }
+
+    //set values for text fields
+    function setTextFieldValues(id, name, address, salary) {
+        $("#txtCustomerID").val(id);
+        $("#txtCustomerName").val(name);
+        $("#txtCustomerAddress").val(address);
+        $("#txtCustomerSalary").val(salary);
     }
 
 </script>
