@@ -136,26 +136,26 @@
     });
 
 
-    $("#txtCustomerID").on("keypress", function (e){
+  /*  $("#txtCustomerID").on("keypress", function (e){
         if (e.key=="Enter"){
-            var customerID = $(#txtCustomerID).val();
+            var customerID = $("#txtCustomerID").val();
 
             $.ajax({
                 url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer"+txtCustomerID,
                 method:"GET",
                 success: function (res) {
                     console.log(res);
-                    /*     alert(res.message);
+                    /!*     alert(res.message);
                          loadAllCustomers();
                      },
                      error:function(error){
                          var jsObject=JSON.parse(error.responseText);
-                         alert(jsObject.message);*/
+                         alert(jsObject.message);*!/
                 }
             });
         }
     });
-
+*/
 
 
     //Add customer to the database
@@ -221,18 +221,19 @@
         }
 
         $.ajax({
-            url: baseURL+'customers',
+            url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer",
             method: 'put',
             contentType:"application/json",
             data:JSON.stringify(customer),
             dataType:"json",
             success: function (res) {
-                alert(res.message);
+                console.log(res);
+              /*  alert(res.message);
                 loadAllCustomers();
             },
             error:function (error){
                 let cause= JSON.parse(error.responseText).message;
-                alert(cause);
+                alert(cause);*/
             }
 
         });

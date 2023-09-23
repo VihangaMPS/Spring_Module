@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -33,5 +34,12 @@ public class CustomerController {
        return new  CustomerDTO(id,"dasun","Galle",4841);
     }
 
+
+    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
+    public CustomerDTO updatedCustomer(@RequestBody CustomerDTO dto){
+        System.out.println(dto.toString());
+        return dto;
+
+    }
 
 }
