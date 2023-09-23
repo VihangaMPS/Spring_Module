@@ -10,7 +10,10 @@ public class JPAConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
         LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
-        return bean; 
+        bean.setJpaVendorAdapter(); //vendor
+        bean.setDataSource(); //connection
+        bean.setPackagesToScan("lk.ijse.spring.entity"); // location of the entity
+        return bean;
     }
 
 }
