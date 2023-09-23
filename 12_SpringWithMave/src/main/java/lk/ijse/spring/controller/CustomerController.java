@@ -42,4 +42,9 @@ public class CustomerController {
 
     }
 
+    @DeleteMapping(params = {"id"})
+    public CustomerDTO deleteCustomer(@RequestParam String id){
+        return new  CustomerDTO(id,"dasun","Galle",4841);
+    }
+
 }
