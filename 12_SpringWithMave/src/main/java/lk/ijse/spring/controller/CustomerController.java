@@ -33,6 +33,11 @@ public class CustomerController {
 
 */
 
+    //consume - if we put consumes type that means u have to put content type header
+    //in the request
+
+    //produce - if u want to state that what u'r are going to produce from here u can use produced header
+    //also put to accept header in the request header
     @GetMapping(consumes = "application/json" ,produces = "application/json")
     public CustomerDTO testMethodOne(){
         return new CustomerDTO("C001","IJSE","Panadura",45454.00);
