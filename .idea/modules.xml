@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/11_Rest_Controller/11_Rest_Controller.iml" filepath="$PROJECT_DIR$/11_Rest_Controller/11_Rest_Controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/12_SpringWithMave/12_SpringWithMave.iml" filepath="$PROJECT_DIR$/12_SpringWithMave/12_SpringWithMave.iml" />
       <module fileurl="file://$PROJECT_DIR$/13_FrontEnd/13_FrontEnd.iml" filepath="$PROJECT_DIR$/13_FrontEnd/13_FrontEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14_SpringDataJPA/14_SpringDataJPA.iml" filepath="$PROJECT_DIR$/14_SpringDataJPA/14_SpringDataJPA.iml" />
     </modules>
   </component>
 </project>

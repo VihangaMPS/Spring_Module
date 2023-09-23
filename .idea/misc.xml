@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/12_SpringWithMave" />
+    <file type="web" url="file://$PROJECT_DIR$/14_SpringDataJPA" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -9,6 +10,7 @@
         <option value="$PROJECT_DIR$/10_RestController/pom.xml" />
         <option value="$PROJECT_DIR$/11_Rest_Controller/pom.xml" />
         <option value="$PROJECT_DIR$/12_SpringWithMave/pom.xml" />
+        <option value="$PROJECT_DIR$/14_SpringDataJPA/pom.xml" />
       </list>
     </option>
   </component>
