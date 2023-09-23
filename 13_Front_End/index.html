@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+</head>
+<body>
+
+<form action="customer">
+    <input name="id" type="text" placeholder="Custoemr ID">
+    <button type="button" onclick="sendRequest()">Send</button>
+</form>
+
+
+<script>
+    function sendRequest() {
+        console.log("Before Request Send")
+        let http = new XMLHttpRequest();
+        console.log('After Object Creation',http.readyState);//0
+
+
+        http.open("GET", "localDB/db.txt",true);
+        console.log('After Open method',http.readyState);//1
+
+
+        //true(Default) = asynchronous (non-blocking)
+        //false = synchronous (blocking)
+        http.send();
+        console.log('After send method',http.readyState);//1
+
+
+        http.onreadystatechange=function (){
+            console.log(http.readyState," : ",http.responseText);
+            if (http.readyState==4){
+                console.log(http.responseText);
+            }
+        }
+
+        console.log(http.responseText);
+        console.log("After Request Processed");
+        console.log('After all',http.readyState);//1
+
+    }
+
+    // console.log("Before Time out") //1
+    //
+    // setTimeout(function (){
+    //     console.log("To be invoked after 5000")
+    // },5000); //3
+    //
+    // console.log("After Time out")//2
+
+</script>
+</body>
+</html>
