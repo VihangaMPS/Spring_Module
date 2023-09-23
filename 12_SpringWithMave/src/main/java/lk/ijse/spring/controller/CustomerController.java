@@ -33,7 +33,7 @@ public class CustomerController {
 
 */
 
-    @GetMapping
+    @GetMapping(consumes = "application/json" ,produces = "application/json")
     public CustomerDTO testMethodOne(){
         return new CustomerDTO("C001","IJSE","Panadura",45454.00);
     }
