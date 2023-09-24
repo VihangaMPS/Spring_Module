@@ -2,6 +2,7 @@ package lk.ijse.spring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -9,11 +10,14 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
+@EnableJpaRepositories(basePackages = "lk.ijse.spring.repo")
+@EnableTransactionManagement
 public class JPAConfig {
 
     @Bean
@@ -38,7 +42,7 @@ public class JPAConfig {
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
         HibernateJpaVendorAdapter vendor = new HibernateJpaVendorAdapter();
-        vendor.setDatabasePlatform("org.hibernate.dialect.MySQL80Dialect");
+//        vendor.setDatabasePlatform("org.hibernate.dialect.MySQL80Dialect");
         vendor.setDatabase(Database.MYSQL);
         vendor.setShowSql(true);
         vendor.setGenerateDdl(true);
