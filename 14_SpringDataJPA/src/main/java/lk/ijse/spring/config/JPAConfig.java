@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
 
@@ -32,8 +33,9 @@ public class JPAConfig {
 
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
-
-        return
+        HibernateJpaVendorAdapter vendor = new HibernateJpaVendorAdapter();
+        vendor.setDatabasePlatform("org.hibernate.dialect.MySQL80Dialect");
+        return vendor;
     }
 
 }
