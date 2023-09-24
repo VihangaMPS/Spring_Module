@@ -42,7 +42,7 @@ public class JPAConfig {
     @Bean
     public JpaVendorAdapter jpaVendorAdapter(){
         HibernateJpaVendorAdapter vendor = new HibernateJpaVendorAdapter();
-//        vendor.setDatabasePlatform("org.hibernate.dialect.MySQL80Dialect");
+        vendor.setDatabasePlatform("org.hibernate.dialect.MySQL57Dialect");
         vendor.setDatabase(Database.MYSQL);
         vendor.setShowSql(true);
         vendor.setGenerateDdl(true);
