@@ -20,6 +20,7 @@
   - Params Controller
   
 - Spring With Maven
+- Spring Data JPA
  
 
   
