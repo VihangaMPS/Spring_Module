@@ -16,7 +16,12 @@ public class CustomerServiceImpl {
     private CustomerRepo repo;
 
     public void saveCustomer(Customer entity){
-        repo.save(entity);
+        if (!repo.existsById(entity.getId())){
+            repo.save(entity);
+        }else {
+            throw new RuntimeException("Customer Already exists ...");
+        }
+
     }
     public void deleteCustomer(String id){
         repo.deleteById(id);
