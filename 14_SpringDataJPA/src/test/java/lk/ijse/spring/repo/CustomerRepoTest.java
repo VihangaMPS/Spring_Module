@@ -57,6 +57,14 @@ class CustomerRepoTest {
 
     }
 
+     @Test
+    public void updateCustomer(){
+         Customer customer1 = new Customer("C001","padme","panadura",10000.00);
+        customerRepo.save(customer1);
+
+     }
+
+
 
 
 }
