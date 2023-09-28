@@ -31,4 +31,9 @@ public class CustomerController {
         customerService.saveCustomer(customer);
     }
 
+    @PutMapping
+    public  void updateCustomer(@RequestBody Customer customer){
+        customerService.updateCustomer(customer);
+    }
+
 }
