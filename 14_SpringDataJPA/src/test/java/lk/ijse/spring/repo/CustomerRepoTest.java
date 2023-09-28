@@ -9,6 +9,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.util.List;
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @WebAppConfiguration //state test configuration class
@@ -28,7 +31,32 @@ class CustomerRepoTest {
         customerRepo.save(customer1);
         customerRepo.save(customer2);
         customerRepo.save(customer3);
+    }
+
+    @Test
+    public void getAllCustomer(){
+        List<Customer> all = customerRepo.findAll();
+        for (Customer customer : all) {
+            System.out.println(customer.toString());
+        }
+    }
+    @Test
+    public void searchCustomer(){
+        Optional<Customer> optional = customerRepo.findById("C001");
+        boolean present = optional.isPresent();
+        System.out.println(present);
+
+        Customer customer = optional.get();
+        System.out.println(customer.toString());
 
     }
+
+    @Test
+    public void deleteCustomer(){
+        customerRepo.deleteById("C001");
+
+    }
+
+
 
 }
