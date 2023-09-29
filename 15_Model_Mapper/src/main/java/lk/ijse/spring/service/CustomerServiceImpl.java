@@ -50,9 +50,8 @@ public class CustomerServiceImpl  implements CustomerService {
     public  void updateCustomer(CustomerDTO dto){
         if (repo.existsById(dto.getId())) {
 
-            Customer customer = new Customer(dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
-
-            repo.save(customer);
+           // Customer customer = new Customer(dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
+            repo.save(mapper.map(dto, Customer.class));
         }else {
             throw  new RuntimeException("No Such Customer To Updated..? Please check the id ..!!!");
         }
