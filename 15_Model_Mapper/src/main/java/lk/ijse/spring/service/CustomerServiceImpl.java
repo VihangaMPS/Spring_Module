@@ -5,6 +5,7 @@ import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.CustomerRepo;
 import lk.ijse.spring.service.impl.CustomerService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -62,9 +63,9 @@ public class CustomerServiceImpl  implements CustomerService {
     public CustomerDTO searchCustomer(String id ){
         if (repo.existsById(id)) {
 
+            return mapper.map(repo.findById(id).get(), CustomerDTO.class);
 
-            Customer customer = repo.findById(id).get();
-            return new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress(),customer.getSalary());
+            //return new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress(),customer.getSalary());
 
         }else {
             throw new RuntimeException("No Customer For "+id+" ...!");
@@ -74,14 +75,16 @@ public class CustomerServiceImpl  implements CustomerService {
 
     @Override
     public List<CustomerDTO> getAllCustomer() {
-        List<Customer> all = repo.findAll();
-        ArrayList<CustomerDTO> list = new ArrayList<>();
+       // List<Customer> all = repo.findAll();
+    /*    ArrayList<CustomerDTO> list = new ArrayList<>();
 
         for (Customer customer : all) {
             list.add(new CustomerDTO(customer.getId(), customer.getName(), customer.getAddress(), customer.getSalary()));
         }
+*/
+       return mapper.map(repo.findAll(), new TypeToken<List<CustomerDTO>>() {}.getType());
 
-        return list;
+
 
     }
 }
