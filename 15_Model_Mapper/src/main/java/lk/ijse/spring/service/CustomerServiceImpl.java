@@ -4,9 +4,11 @@ import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.CustomerRepo;
 import lk.ijse.spring.service.impl.CustomerService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +20,18 @@ public class CustomerServiceImpl  implements CustomerService {
     @Autowired
     private CustomerRepo repo;
 
+    @Autowired
+    private ModelMapper mapper;
+
     @Override
     public void saveCustomer(CustomerDTO dto){
         if (!repo.existsById(dto.getId())){
 
-            Customer customer = new Customer(dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
-
-            repo.save(customer);
+            Customer entity = mapper.map(dto, Customer.class);
+            //Customer customer = new Customer(dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
+            // 01 . Sourced
+            // 02 . Destination Type - > Class Type which we want to convert the source
+            repo.save(entity);
         }else {
             throw new RuntimeException("Customer Already exists ...");
         }
