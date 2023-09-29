@@ -1,6 +1,7 @@
 package repo;
 
 import lk.ijse.spring.config.JPAConfig;
+import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.CustomerRepo;
 import org.junit.jupiter.api.Test;
@@ -63,6 +64,12 @@ class CustomerRepoTest {
 
      }
 
+
+     @Test
+    public void testData(){
+         CustomerDTO customerDTO = new CustomerDTO("","","",1000.00);
+
+     }
 
 
 
