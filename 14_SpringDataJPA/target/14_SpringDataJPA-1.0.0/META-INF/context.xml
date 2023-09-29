@@ -2,7 +2,6 @@
 <Context path="/">
 
     <Resource
-
             name="jdbc/pool"
             type="javax.sql.DataSource"
             driverClassName="com.mysql.jdbc.Driver"

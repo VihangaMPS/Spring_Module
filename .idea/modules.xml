@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/12_SpringWithMave/12_SpringWithMave.iml" filepath="$PROJECT_DIR$/12_SpringWithMave/12_SpringWithMave.iml" />
       <module fileurl="file://$PROJECT_DIR$/13_FrontEnd/13_FrontEnd.iml" filepath="$PROJECT_DIR$/13_FrontEnd/13_FrontEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/14_SpringDataJPA/14_SpringDataJPA.iml" filepath="$PROJECT_DIR$/14_SpringDataJPA/14_SpringDataJPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15_Model_Mapper/15_Model_Mapper.iml" filepath="$PROJECT_DIR$/15_Model_Mapper/15_Model_Mapper.iml" />
     </modules>
   </component>
 </project>
