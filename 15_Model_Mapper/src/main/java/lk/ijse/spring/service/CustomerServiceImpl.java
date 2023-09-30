@@ -28,11 +28,11 @@ public class CustomerServiceImpl  implements CustomerService {
     public void saveCustomer(CustomerDTO dto){
         if (!repo.existsById(dto.getId())){
 
-            Customer entity = mapper.map(dto, Customer.class);
+            //Customer entity = mapper.map(dto, Customer.class);
             //Customer customer = new Customer(dto.getId(), dto.getName(), dto.getAddress(), dto.getSalary());
             // 01 . Sourced
             // 02 . Destination Type - > Class Type which we want to convert the source
-            repo.save(entity);
+            repo.save(mapper.map(dto, Customer.class));
         }else {
             throw new RuntimeException("Customer Already exists ...");
         }
@@ -62,11 +62,8 @@ public class CustomerServiceImpl  implements CustomerService {
     @Override
     public CustomerDTO searchCustomer(String id ){
         if (repo.existsById(id)) {
-
             return mapper.map(repo.findById(id).get(), CustomerDTO.class);
-
             //return new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress(),customer.getSalary());
-
         }else {
             throw new RuntimeException("No Customer For "+id+" ...!");
         }
