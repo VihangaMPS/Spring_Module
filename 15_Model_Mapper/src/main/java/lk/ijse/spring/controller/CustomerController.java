@@ -1,12 +1,13 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
-import lk.ijse.spring.entity.Customer;
+
 import lk.ijse.spring.service.impl.CustomerService;
+import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("api/v1/customer")
@@ -23,28 +24,34 @@ public class CustomerController {
 
 
     @GetMapping
-    public List<CustomerDTO> getAllCustomer(){
-        return customerService.getAllCustomer();
+    public ResponseUtil getAllCustomer(){
+         return  new ResponseUtil(200,"Ok",customerService.getAllCustomer());
     }
 
     @PostMapping
-    public void saveCustomer( @ModelAttribute CustomerDTO customer){
+    public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO customer){
         customerService.saveCustomer(customer);
+        return new ResponseUtil(200,"ok",null);
     }
 
     @PutMapping
-    public  void updateCustomer(@RequestBody CustomerDTO customer){
+    public  ResponseUtil updateCustomer(@RequestBody CustomerDTO customer){
         customerService.updateCustomer(customer);
+        return new ResponseUtil(200,"ok",null);
+
     }
 
     @DeleteMapping(params = {"id"})
-    public void deleteCustomer(@RequestParam String id){
+    public ResponseUtil deleteCustomer(@RequestParam String id){
         customerService.deleteCustomer(id);
+        return new ResponseUtil(200,"ok",null);
+
     }
 
     @GetMapping(path = "/{id} ")
-    public CustomerDTO searchCustomer(@PathVariable String id ){
-        return customerService.searchCustomer(id);
+    public ResponseUtil searchCustomer(@PathVariable String id ){
+        return new ResponseUtil(200,"ok",customerService.searchCustomer(id));
+
     }
 
 }
