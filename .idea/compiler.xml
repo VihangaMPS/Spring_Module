@@ -20,6 +20,7 @@
       <module name="12_SpringWithMave" target="8" />
       <module name="14_SpringDataJPA" target="8" />
       <module name="15_Model_Mapper" target="8" />
+      <module name="16_FrontEnd" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
