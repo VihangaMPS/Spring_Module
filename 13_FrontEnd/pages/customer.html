@@ -192,7 +192,8 @@
     $("#btnCusDelete").click(function () {
         let id = $("#txtCustomerID").val();
         $.ajax({
-            url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer?id=",            method: "delete",
+           // url: "http://localhost:8080/12_SpringWithMave_war/api/v1/customer?id=",            method: "delete",
+            url: baseUrl,
             dataType:"json",
             success: function (resp) {
                 alert(resp.message);
